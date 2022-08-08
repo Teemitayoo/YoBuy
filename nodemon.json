@@ -1,0 +1,6 @@
+{
+    "env": {
+        "STRIPEKEY": "sk_test_51LR000CFildObN1N8nRppTKCv86UrSeuMTu6L7oHcoROD6Q7zBQRPhceCTfVMqLB4RRKkR23tFtGDs6kHeNU0wmJ00bKgR12r7",
+        "DBPASS": "LtkWyVCMBvUglobJ"
+    }
+}

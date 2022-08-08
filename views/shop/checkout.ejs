@@ -1,0 +1,33 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/cart.css">
+    </head>
+
+    <body>
+        <%- include('../includes/navigation.ejs') %>
+            <main>
+                <% if (products.length> 0) { %>
+                    <ul class="cart__item-list">
+                        <% products.forEach(p=> { %>
+                            <li class="cart__item">
+                                <h1>
+                                    <%= p.productId.title %>
+                                </h1>
+                                <h2>Quantity: <%= p.quantity %>
+                                </h2>
+                            </li>
+                            <% }) %>
+                    </ul>
+                    <hr>
+                    <div class="centered">
+						<h3>Total Amount : <%=totalAmount.toLocaleString()%></h3>
+						<input type="text" hidden value="<%= sessionId %>" id="sessionID-input"/>
+						<button class="btn" id="order-btn">Pay</button>
+                    </div>
+
+                    <% } else { %>
+                        <h1>No Products in Cart!</h1>
+                        <% } %>
+            </main>
+						<script src="https://js.stripe.com/v3/"></script>
+						<script src="/js/payment.js"></script>
+            <%- include('../includes/end.ejs') %>
